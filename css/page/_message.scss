@@ -1,0 +1,98 @@
+/*================================
+	代表あいさつ
+=================================*/
+.president-photo{
+  margin-bottom: 12px;
+
+  img{
+    margin: 0 auto;
+  }
+}
+
+.message__area{
+  p{
+    padding-bottom: 10px;
+  }
+}
+
+.name{
+  img{
+    display: block;
+    margin-left: auto;
+  }
+}
+
+ /* 768px以上は横並び */
+@include mq('md'){
+  .message__wrapper{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .president-photo{
+    width: 40%;
+  }
+
+  .message__area{
+    width: 58%;
+  }
+}
+
+/*================================
+	企業理念
+=================================*/
+.idea{
+  background: url(../images/message/back_idea.jpeg) 0 70px no-repeat;
+  padding-top: 210px;
+  margin-top: 70px;
+  border-top: 1px dashed #ccc;
+  margin: 1.5rem calc(50% - 50vw) 0;
+  max-width: 1100px;
+
+  @include mq('md'){
+    margin: 0 auto;
+  }
+  
+}
+
+.idea__container{
+  text-shadow: 0 0 3px #fff, 1px 1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff, -1px -1px 0 #fff;
+  padding: 25px;
+  margin-right: 6%;
+  margin-left: 6%;
+  background: rgba(255,255,255,0.7);
+}
+
+.idea__title{
+  text-align: center;
+  font-size: 24px;
+}
+
+.idea__items{
+
+  dl{
+    padding-top: 24px;
+  }
+
+  dt{
+    font-size: 18px;
+    padding-bottom: 8px;
+    font-weight: bold;
+
+    span{
+      font-size: 16px;
+    }
+  }
+
+  dd{
+    font-size: 14px;
+  }
+}
+
+.idea__note{
+  padding-top: 24px;
+
+  p{
+    padding-bottom: 8px;
+  }
+}

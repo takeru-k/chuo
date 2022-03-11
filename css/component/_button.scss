@@ -1,0 +1,53 @@
+/*================================
+	ボタン設定
+=================================*/
+/* 背景色＝白 */
+.button{
+  display: inline-block;
+  padding: 6px 36px;
+  color: $color-main;
+  border: 2px solid $color-main;
+  border-radius: 24px;
+  text-decoration: none;
+  font-family: $font-gothic;
+  font-weight: bold;
+  vertical-align: top;
+  transition: .8s;
+
+  &:hover{
+    background: $color-main;
+    color: #fff;
+  }
+}
+
+/* 背景色＝緑 */
+.button-primary{
+  color: #fff;
+  background: $color-main;
+  height: 46px;
+
+  &:hover{
+    background: #fff;
+    color: $color-main;
+  }
+}
+
+/* TOPページ下部のお問い合わせ */
+.button-tel{
+  position: relative;
+  font-size: 24px;
+  padding: 0;
+  font-family: '游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
+  font-weight: 500;
+
+  &:before{
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2.4rem;
+    width: 18px;
+    height: 18px;
+    content: "";
+    position: absolute;
+    background: url(../images/top/icon-phone.png)  no-repeat center center / contain;
+  }
+}

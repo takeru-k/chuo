@@ -1,0 +1,21 @@
+/*================================
+	見出し設定
+=================================*/
+.section-title{
+  text-align: center;
+  padding-bottom: 12px;
+
+  span{
+    color: $color-main;
+    font-size: 14px;
+    display: block;
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+  }
+}
+
+.section__heading{
+  border-left: 5px solid $color-main;
+  padding-left: 10px;
+  border-bottom: 1px solid #ddd;
+}

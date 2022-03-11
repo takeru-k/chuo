@@ -1,0 +1,93 @@
+/*================================
+	会社概要ページ
+=================================*/
+.staff-photo{
+  width: 100%;
+  max-width: 1100px;
+
+  img{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    padding-bottom: 12px;
+    margin: 0 auto;
+  }
+}
+
+/* 1024px以上のサイズ調整 */
+@include mq('lg'){
+  .staff-photo{
+    img{
+      height: 300px;
+    }
+  }
+}
+
+/* 640pxまではtableを縦並び */
+@media not all and (min-width: 640px){
+  .about{
+    th{
+      display: block;
+    }
+
+    td{
+      display: block;
+      padding-bottom: 16px;
+    }
+  }
+}
+
+/* tableのスタイリング */
+.about{
+  table{
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  tr{
+    border-top: 1px solid #ddd;
+    vertical-align: top;
+    
+  }
+
+  th{
+    text-align: left;
+    padding-top: 16px;
+    font-weight: bold;
+
+    @include mq('sm'){
+      background: #f0f0f0;/* 640pxから背景色を追加 */
+      padding: 16px;
+    }
+  }
+
+  td{
+    padding-top: 4px;
+
+    a{
+      text-decoration: underline;
+    }
+
+    @include mq('sm'){
+      padding: 16px;
+    }
+    
+  }
+}
+
+/* Googleマップのスタイリング */
+.iframe-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 75%; /* = height ÷ width × 100 */
+  margin-bottom: 8px;
+}
+
+.iframe-wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+

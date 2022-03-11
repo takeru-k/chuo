@@ -1,0 +1,68 @@
+/*================================
+	スライドショー(swiper)の設定
+=================================*/
+/* wrapperのサイズを調整 */
+.swiper--wrapper {
+  width: 100%;
+  height: 300px;
+}
+
+ /* スライドのサイズを調整 */
+.swiper-slide {
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 300px;
+
+	img{
+		object-fit: cover;
+	}
+}
+
+/* 矢印ボタン */
+.swiper-button-prev,
+.swiper-button-next {
+	width: 32px;
+	height: 32px;
+	margin-top: -16px;
+}
+
+.swiper-button-prev {
+	background: url(../images/top/arrow-prev.png) no-repeat center center / contain;
+}
+
+.swiper-button-prev::after {
+	content: "";
+}
+
+.swiper-button-next {
+	background: url(../images/top/arrow-next.png) no-repeat center center / contain;
+}
+
+.swiper-button-next::after {
+	content: "";
+}
+
+/* 1024px以上の矢印ボタンの位置調整 */
+@include mq('lg'){
+	.swiper-button-next {
+    right: 80px;
+    left: auto;
+  }
+
+  .swiper-button-prev{
+    right: auto;
+    left: 80px;
+  }
+}
+
+/* ページネーションのスタイリング */
+.swiper-pagination-bullet{
+	background: #fff;
+	opacity: 1;
+}
+
+.swiper-pagination-bullet-active{
+	background: $color-main;
+}

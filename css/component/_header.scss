@@ -1,0 +1,167 @@
+/*================================
+	header
+=================================*/
+.header__inner{
+  padding: 8px 16px;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+.header__logo{
+  width: 160px;
+}
+
+/* 768pxからロゴとキャッチフレーズを横並び */
+.header__title{
+	@include mq('md'){
+		display: flex;
+		align-items: center;
+	}
+}
+
+/* ロゴ横のキャッチフレーズ */
+.header__logo-sub{
+	display: none;/* スマホは非表示 */
+
+	@include mq('md'){
+		display: block;
+		float: right;
+		font-size: 14px;
+		padding-left: 16px;
+	}
+}
+
+/* ハンバーガーメニュー */
+.menu-btn {
+	position: fixed;
+	top: 16px;
+	right: 16px;
+	z-index: 10;
+	width: 32px;
+	height: 32px;
+}
+
+/* ハンバーガーメニューの基準線 */
+.btn-line {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 3px;
+	background-color: $color-main;
+	transition: .2s;
+}
+
+/* ハンバーガーメニューの上下線 */
+.btn-line::before , .btn-line::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: $color-main;
+	transition: .5s;
+}
+
+.btn-line::before {
+	transform: translateY(-12px);/* 上の線の位置 */
+}
+
+.btn-line::after {
+	transform: translateY(12px);/* 下の線の位置 */
+}
+
+
+/* メニューオープン時 */
+.btn-line.open {
+	background-color: transparent;/* 真ん中の線を透明に */
+}
+
+.btn-line.open::before , .btn-line.open::after {
+	content: "";
+	background-color: #333;
+	transition: .2s;
+}
+
+.btn-line.open::before {
+	transform: rotate(45deg);	/* 上の線を傾ける */
+}
+
+.btn-line.open::after {
+	transform: rotate(-45deg);/* したの線を傾ける */
+}
+
+/* メニューのスタイリング */
+.header__menu {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	right: -70%;/* メニューの位置マイナス指定で画面外に */
+	width: 70%;
+	height: 100vh;
+	background-color: $color-main;
+	color: #efefef;
+	transition: .3s;
+	font-family: $font-gothic;
+
+  li{
+    display: flex;
+    align-items: center;
+    padding: 32px 24px;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+  }
+
+	a{
+		&:hover{
+			color: $color-main;
+		}
+	}
+}
+
+.header__menu.open {
+	position: absolute;
+	right: 0;/* メニューオープン時位置0にして画面内に */
+  z-index: 100;
+}
+
+/* スマホはボタンを非表示 */
+.header__links{
+	display: none;
+}
+
+/* 1024px以上のスタイリング */
+@include mq('lg'){
+  .menu-btn {
+		display: none;
+	}
+
+	.header__menu {
+		/* メニューを横に */
+		display: flex;
+		justify-content: center;
+		flex-direction: row;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background: #fff;
+		left: 0;
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+		margin-bottom: 24px;
+		
+		li{
+			color: #000;
+			padding: 16px;
+		}
+	}
+
+	.header__inner{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 24px;
+	}
+
+	.header__links{
+		display: block;
+	}
+}

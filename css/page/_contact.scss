@@ -1,0 +1,41 @@
+/*================================
+	お問い合わせページ
+=================================*/
+.contact__wrapper{
+  text-align: center;
+  font-size: 24px;
+  padding-top: 16px;
+  padding-bottom: 24px;
+}
+
+.contact__item{
+  padding-bottom: 16px;
+}
+
+.contact__tel{
+  margin-left: -10px;/* 電話のアイコン表示用の余白 */
+
+  /* 電話のアイコン */
+  &:before{
+    content: "☎";
+    font-size: 80%;
+    color: #aaa;
+    margin-right: 10px;
+  }
+
+  /* 1024pxから文字サイズを大きく */
+  @include mq('lg'){
+    font-size: 2rem;
+  }
+}
+
+.contact__mail{
+  font-size: 1rem;
+
+  /* 1024pxからサイズを大きく */
+  @include mq('lg'){
+    width: 400px;
+    font-size: 1.5rem;
+    height: 100%;
+  }
+}

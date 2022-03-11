@@ -1,0 +1,77 @@
+/*================================
+	footer設定
+=================================*/
+#footer{
+  background: $color-main;
+}
+
+.footer__inner{
+  color: #fff;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-right: 6%;
+  padding-left: 6%;
+  font-family: $font-gothic;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer__about{
+  margin-bottom: 16px;
+  line-height: 1.4;
+  
+  h1{
+    font-size: 18px;
+  }
+
+  ul{
+    padding-top: 12px;
+    font-size: 14px;
+  }
+
+  li{
+    margin-bottom: 4px;
+  }
+}
+
+.footer__menu{
+  font-size: 14px;
+  
+  li{
+    margin-bottom: 16px;
+
+    &:hover{
+      opacity: 0.8;
+    }
+  }
+}
+
+/* 1024pxから横並び */
+@include mq('lg'){
+  .footer__inner{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 80px;
+    padding-top: 56px;
+  }
+
+  .footer__menu{
+    ul{
+      display: flex;
+    }
+
+    li{
+      width: 96px;
+    }
+  }
+}
+
+/* 著作権 */
+.footer__copy{
+  background: #009B7D;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  padding: 12px 0;
+  font-family: '源ノ角ゴシック JP';
+}

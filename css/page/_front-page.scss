@@ -1,0 +1,285 @@
+/*================================
+	TOPページ
+=================================*/
+/*================================
+	スライドショーの設定
+=================================*/
+.mv{
+  position: relative;
+}
+
+/* ヘッドコピー */
+.mv__catch{
+  position: absolute;
+  bottom: 48px;
+  left: 10px;
+  z-index: 10;
+
+  /* 1024px以上の位置調整 */
+  @include mq('lg'){
+    left: 11rem;
+  }
+
+  /* 見出し */
+  h1{
+    background: #fff;
+    display: inline-block;
+    padding: 4px 8px;
+    font-weight: 500;
+
+    span{
+      color: $color-main;/* 「笑顔」を緑に */
+    }
+  }
+
+  p{
+    display: none;/* リードコピーは640px以下は非表示 */
+
+    @include mq('md'){
+      display: block;
+      background: #fff;
+      font-size: 14px;
+      padding: 10px;
+      margin-top: 12px;
+    }
+  }
+}
+
+/* スライドショーの背景色 */
+.mv:after{
+  display: block;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 80%;
+  bottom: -16px;
+  left: 0;
+  background-image: url(../images/top/background01.png);
+  z-index: 0;
+
+  /* 1024px以上の位置調整 */
+  @include mq('lg'){
+    bottom: -50px;
+  }
+}
+
+/* 640pxまでは文字サイズを小さく */
+@media not all and (min-width: 640px){
+  .mv__catch{
+    h1{
+      font-size: 1.2rem;
+    }
+  }
+}
+
+/*================================
+	セクション間の余白設定
+=================================*/
+.top-contents{
+  padding-top: 40px;
+}
+
+/*================================
+	.home-menu
+=================================*/
+.home-menu{
+  padding-bottom: 36px;
+
+  img{
+    display: block;
+    margin: 0 auto;
+  }
+
+  h2{
+    font-size: 24px;
+    text-align: center;
+    margin-top: 16px;
+    font-weight: 500;
+  }
+
+  p{
+    font-size: 14px;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  /* 1280px以上の余白調整 */
+  @include mq('xl'){
+    padding-bottom: 72px;
+  }
+}
+
+/* 768pxから横並び */
+.home-menu__wrapper{
+  @include mq('md'){
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @include mq('lg'){
+    padding-top: 80px;
+  }
+}
+
+.home-menu{
+  @include mq('lg'){
+    width: 33%;/* 横並びのためのwidth設定 */
+  }
+}
+
+/*================================
+	採用情報
+=================================*/
+/* 背景画像のスタイリング */
+.top-recruit__img{
+  /* 1024px以上のサイズ設定 */
+  @include mq('lg'){
+    img{
+      object-fit: cover;
+      height: 360px;
+      margin: auto;
+    }
+  }
+}
+
+/* 文章エリアのスタイリング */
+.top-recruit__wrapper{
+  background: #fff;
+  padding: 24px 16px;
+  width: 90%;
+  margin: -100px auto 0;
+  position: relative;
+
+  /* 1024px以上のサイズ設定 */
+  @include mq('lg'){
+    width: 48%;
+    padding: 48px 56px;
+  }
+}
+
+/* 見出し */
+.top-recruit__title{
+  text-align: center;
+  position: relative;
+
+  h2{
+    font-size: 24px;
+    font-weight: 500;
+
+    span{/* 見出しの英語部分 */
+      text-transform: uppercase;
+      color: $color-main;
+      font-size: 10px;
+      display: block;
+      padding-bottom: 8px;
+      font-family: 'Montserrat';
+    } 
+  }
+
+  p{/* リードコピー */
+    font-size: 16px;
+    font-weight: bold;
+    font-family: $font-gothic;
+    padding-top: 12px;
+  }
+
+  /* 見出し下のライン */
+  &:after{
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    display: inline-block;
+    width: 46px;
+    height: 1px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: $color-main;
+    border-radius: 2px;
+  }
+}
+
+.top-recruit__text{
+  padding-top: 40px;
+  font-size: 14px;
+  font-family: $font-gothic;
+
+  @include mq('sm'){
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  @include mq('lg'){
+    width: 90%;
+  }
+}
+
+.top-recriuit__button{
+  text-align: center;
+  padding-top: 32px;
+}
+
+/*================================
+	お問い合わせ
+=================================*/
+.cta{
+  background: #FAF8F5;
+  padding: 24px 32px;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  max-width: 720px;
+  margin: 0 auto 40px;
+}
+
+.cta__title{
+  text-align: center;
+
+  h2{
+    font-weight: 500;
+    display: inline-block;
+    border-bottom: 3px solid #fff;
+  }
+}
+
+.cta__text{
+  width: 72%;
+  max-width: 440px;
+  margin: 0 auto;
+
+  p{
+    padding-top: 16px;
+    font-size: 14px;
+    font-family: $font-gothic;
+  }
+}
+
+ /* 1024px以上のスタイリング */
+@include mq('lg'){
+  .cta{
+    margin-right: auto;
+    margin-left: auto;
+    padding: 52px;
+
+    p{
+      margin: 0 auto;
+      padding-top: 16px;
+    }
+  }
+
+  .cta__title{
+    h2{
+      font-size: 36px;
+    }
+  }
+}
+
+.cta__buttons{
+  text-align: center;
+  padding-top: 32px;
+
+  .button{
+    width: 260px;
+    margin-bottom: 16px;
+  }
+}
